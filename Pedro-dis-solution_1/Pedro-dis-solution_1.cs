@@ -55,6 +55,7 @@ namespace Pedro_solution_1
 	using System.Collections.Generic;
 	using System.Globalization;
 	using System.Text;
+	using Empower.Library.Room4;
 	using Skyline.DataMiner.Automation;
 	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
 
@@ -69,14 +70,17 @@ namespace Pedro_solution_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			var dms = engine.GetDms();
+			//var dms = engine.GetDms();
 
-			var elements = dms.GetElements();
+			//var elements = dms.GetElements();
 
-			foreach (var element in elements )
-			{
-				engine.GenerateInformation("element: " + element.Name);
-			}
+			//foreach (var element in elements )
+			//{
+			//	engine.GenerateInformation("element: " + element.Name);
+			//}
+
+			var order = OrderFactory.CreateOrder("order 1");
+			order.Dispatch("Pedro de Lima");
 		}
 	}
 }
